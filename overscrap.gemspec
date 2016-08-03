@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Overscrap is a library that allows to retrieve informations from official Overwathc/Blizzard websites}
 #  spec.description   = %q{TODO: Write a longer description or delete this line.}
   spec.homepage      = "https://github.com/aurelman/overscrap"
-  spec.license       = "LGPL"
+  spec.license       = "LGPL-3.0"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.

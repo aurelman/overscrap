@@ -16,22 +16,30 @@ RSpec.describe Overscrap do
   end
 
   it 'takes into consideration specified platform and region parameters' do
-    expect(@httparty).to receive(:get).with(/https:\/\/playoverwatch.com\/en-us\/career\/ps4\/eu\/.*/, any_args)
+    expect(@httparty).to receive(:get).with(/https:\/\/playoverwatch.com\/en-us\/career\/psn\/eu\/.*/, any_args)
 
-    Overscrap::user "Bob#31", region: :eu, platform: :ps4
+    Overscrap::user "Bob#31", region: :eu, platform: :psn
   end
 
-  it 'takes into consideration region parameters and set platform to :pc by default' do
+  it 'takes into consideration region parameter and set platform to :pc by default' do
     expect(@httparty).to receive(:get).with(/https:\/\/playoverwatch.com\/en-us\/career\/pc\/eu\/.*/, any_args)
 
     Overscrap::user "Bob#31", region: :eu
   end
 
+  it 'raises error if platform is unknown' do
+    expect { Overscrap::user "Bob#31", platform: :ps4 }.to raise_error(ArgumentError)
+  end
 
-  it 'takes into consideration platform parameters and set region to :us by default' do
-    expect(@httparty).to receive(:get).with(/https:\/\/playoverwatch.com\/en-us\/career\/ps4\/us\/.*/, any_args)
 
-    Overscrap::user "Bob#31", platform: :ps4
+  it 'raises error if region is unknown' do
+    expect { Overscrap::user "Bob#31", region: :br }.to raise_error(ArgumentError)
+  end
+
+  it 'takes into consideration platform parameter and set region to :us by default' do
+    expect(@httparty).to receive(:get).with(/https:\/\/playoverwatch.com\/en-us\/career\/psn\/us\/.*/, any_args)
+
+    Overscrap::user "Bob#31", platform: :psn
   end
 
   it 'transform the given player tag by replacing # char' do

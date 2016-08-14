@@ -1,5 +1,8 @@
 require "overscrap/version"
+require "overscrap/response"
+
 require 'httparty'
+
 
 module Overscrap
 
@@ -7,7 +10,7 @@ module Overscrap
   AVAILABLE_PLATFORMS = [ :pc, :psn, :xml ]
   AVAILABLE_REGIONS = [ :eu, :us, :kr, :cn, :global ]
 
-  private_constant :USER_DEFAULT_PARAMS, :AVAILABLE_PLATFORMS, :AVAILABLE_REGIONS
+  private_constant :USER_DEFAULT_PARAMS
 
   def self.user(username, opts = {})
     options = USER_DEFAULT_PARAMS.merge(opts)
@@ -17,7 +20,7 @@ module Overscrap
 
     player = username.gsub('#', '-')
 
-    HTTParty.get("https://playoverwatch.com/en-us/career/#{options[:platform]}/#{options[:region]}/#{player}", verify: false)
+    Response.new(HTTParty.get("https://playoverwatch.com/en-us/career/#{options[:platform]}/#{options[:region]}/#{player}", verify: false))
   end
 
 end

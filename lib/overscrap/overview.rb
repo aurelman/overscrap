@@ -4,17 +4,17 @@ class Overview
   end
 
   def games_won
-    r = @nokogiri_doc.at_xpath('//*[@id="overview-section"]/div/div[2]/div/div/p/span/text()').to_s
+    r = @nokogiri_doc.at_xpath('//*[@id="overview-section"]/div/div[2]/div/div/p/span').text
     r.split(' ').first.to_i
   end
 
   def competitive_rank
-    r = @nokogiri_doc.at_xpath('//*[@id="overview-section"]/div/div[2]/div/div/div[3]/div[2]/div/text()').to_s
+    r = @nokogiri_doc.at_xpath('//*[@id="overview-section"]/div/div[2]/div/div/div[3]/div[2]/div').text
     r.to_i
   end
 
   def progression
-    r = @nokogiri_doc.at_xpath('//*[@id="overview-section"]/div/div[2]/div/div/div[3]/div[1]/div/text()').to_s
+    r = @nokogiri_doc.at_xpath('//*[@id="overview-section"]/div/div[2]/div/div/div[3]/div[1]/div').text
     r.to_i
   end
 end

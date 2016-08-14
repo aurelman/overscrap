@@ -5,18 +5,23 @@ require_relative 'overview'
 class Response
 
   def initialize(stream)
-    @response = Nokogiri::HTML(stream)
+    @doc = Nokogiri::HTML(stream)
   end
 
   def competitive
-    Category.new('competitive-play', @response)
+    Category.new(category "competitive-play")
   end
 
   def quick_play
-    Category.new('quick-play', @response)
+    Category.new(category "quick-play")
   end
 
   def overview
-    Overview.new(@response)
+    Overview.new(@doc)
+  end
+
+  private
+  def category(category)
+    @doc.xpath("//*[@id=\"#{category}\"]/section[1]/div/ul")
   end
 end

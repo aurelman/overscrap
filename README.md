@@ -33,25 +33,25 @@ u.competitive_rank     # 50
 
 
 # statistics for competitive games
-u.competitive.eliminations_average      # 6.22
-u.competitive.damage_done_average       # 3666
-u.competitive.deaths_average            # 5.12
-u.competitive.healing_done_average      # 404
-u.competitive.final_blows_average       # 2.12
-u.competitive.objective_kills_average   # 4.02
-u.competitive.solo_kills_average        # 1.22
-u.competitive.objective_time_average    # 45  (in seconds)
+u.competitive.eliminations_avg      # 6.22
+u.competitive.damage_done_avg       # 3666
+u.competitive.deaths_avg            # 5.12
+u.competitive.healing_done_avg      # 404
+u.competitive.final_blows_avg       # 2.12
+u.competitive.objective_kills_avg   # 4.02
+u.competitive.solo_kills_avg        # 1.22
+u.competitive.objective_time_avg    # 45  (in seconds)
 
 
 # same statistics for quick play games
-u.quick_play.eliminations_average
-u.quick_play.damage_done_average
-u.quick_play.deaths_average
-u.quick_play.healing_done_average
-u.quick_play.final_blows_average
-u.quick_play.objective_kills_average
-u.quick_play.solo_kills_average
-u.quick_play.objective_time_average
+u.quick_play.eliminations_avg
+u.quick_play.damage_done_avg
+u.quick_play.deaths_avg
+u.quick_play.healing_done_avg
+u.quick_play.final_blows_avg
+u.quick_play.objective_kills_avg
+u.quick_play.solo_kills_avg
+u.quick_play.objective_time_avg
 ```
 
 ## Development

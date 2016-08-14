@@ -22,7 +22,37 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# retrieves a user by his/her full gamertag
+u = Overscrap.user 'Bobby#1530'
+
+# general statistics
+u.overview.games_won   # 622
+u.overview.progression # 50
+u.competitive_rank     # 50
+
+
+# statistics for competitive games
+u.competitive.eliminations_average      # 6.22
+u.competitive.damage_done_average       # 3666
+u.competitive.deaths_average            # 5.12
+u.competitive.healing_done_average      # 404
+u.competitive.final_blows_average       # 2.12
+u.competitive.objective_kills_average   # 4.02
+u.competitive.solo_kills_average        # 1.22
+u.competitive.objective_time_average    # 45  (in seconds)
+
+
+# same statistics for quick play games
+u.quick_play.eliminations_average
+u.quick_play.damage_done_average
+u.quick_play.deaths_average
+u.quick_play.healing_done_average
+u.quick_play.final_blows_average
+u.quick_play.objective_kills_average
+u.quick_play.solo_kills_average
+u.quick_play.objective_time_average
+```
 
 ## Development
 
@@ -32,7 +62,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/overscrap. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/aurelman/overscrap. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

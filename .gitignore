@@ -18,6 +18,8 @@
 *.iml
 *.iws
 
+.rakeTasks
+
 # Mac
 .DS_Store
 
